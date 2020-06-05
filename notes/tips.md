@@ -21,11 +21,13 @@
 2. Build the crate (it's like `go create`):
 
    `cargo build`
+
    `cargo b`
 
 3. Run the crate (it's like `go run`):
 
    `cargo run`
+
    `cargo r`
 
    1. Silently run:
@@ -35,6 +37,7 @@
 4. Check whether your program can compile:
 
    `cargo check`
+
    `cargo c`
 
    Rustaceans use this command to periodically check their programs. After working on their program, and when they're sure, they build your program using `cargo build --release`.
@@ -56,6 +59,7 @@
 7. Create a library package.
 
    `cargo new --lib <name>`
+   
    _This command will create a package with a test._
 
 8. Work on someone else's project:
