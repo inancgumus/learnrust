@@ -1,0 +1,24 @@
+# toml = Tom's obvious, minimal language
+# toml is Cargo's configuration format.
+# this is where you specify details about your package.
+
+# see more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name = "hello-cargo"                    # what's the name of this package?
+version = "0.1.0"                       # what's the version of this package?
+authors = ["Inanc Gumus <m@inanc.io>"]  # who wrote this package?
+edition = "2018"                        # rust edition
+# see: https://doc.rust-lang.org/edition-guide/editions/index.html
+
+# this package doesn't depend on other packages (crates),
+# so this is empty.
+[dependencies]
+
+# Use these settings for optimized output
+
+# [profile.release]
+# opt-level = 'z'     # Optimize for size.
+# lto = true          # Enable Link Time Optimization
+# codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+# panic = 'abort'     # Abort on panic

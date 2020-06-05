@@ -1,0 +1,14 @@
+
+[package]
+name = "guessing_game"
+version = "0.1.0"
+authors = ["Inanc Gumus <m@inanc.io>"]
+edition = "2018"
+
+# A crate is a collection of Rust source code files.
+
+# - we can't generate random nums using stdlib.
+# + let's include the rand crate as a dependency.
+#   this way, we can generate random numbers.
+[dependencies]
+rand = "0.7.3"
