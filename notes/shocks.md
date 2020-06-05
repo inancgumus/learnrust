@@ -10,7 +10,8 @@ Weird Rust stuff documented.
    enum Option<T>{
       Some(T),
       None
-   }```
+   }
+   ```
 
 2. **String `AsRef<Path>`**
 
@@ -24,25 +25,30 @@ Weird Rust stuff documented.
 
 4. **I couldn't grasp how to run multiple files together from get-go**
 
-    src/main.rs:
+    src/main.rs: 
 
+    ```rust
        mod vectors;
        fn main() {
            vectors::run_vectors();
        }
+    ```
 
-    src/vectors.rs:
-
+    src/vectors.rs: 
+    
+    ```rust
        pub fn run_vectors() {
            println!("vectors!");
        }
+    ```
 
-    Best explanation:
-    https://learning-rust.github.io/docs/d3.modules.html
+    👉 [See this for the best explanation](https://learning-rust.github.io/docs/d3.modules.html).
 
 5. **String concatenation uses the buffer of the origin string**
 
    This is a good thing as in the op below, Rust will copy str2 to
    str1's buffer.
 
-   str1 + &str2;
+   ```rust
+   let str3 = str1 + &str2;
+   ```

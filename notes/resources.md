@@ -24,18 +24,18 @@
 
 ## Resources
 
+* [Learning Resources](https://github.com/ctjhoa/rust-learning)
 * [Official Learning Resources](https://www.rust-lang.org/learn)
 * [Official Rust Book](https://doc.rust-lang.org/book)
 * [Read Rust](https://readrust.net/)
-* [Learning Resources](https://github.com/ctjhoa/rust-learning) ★
 * [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
 * [Rust Style Guidelines](https://doc.rust-lang.org/1.0.0/style/README.html)
 * [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
 * [Code Explainer](https://jrvidal.github.io/explaine.rs/)
+* [This Week in Rust](https://this-week-in-rust.org/)
 
 ## Bloggers
 
-* [This Week in Rust](https://this-week-in-rust.org/)
 * [Niko Matsakis::Baby Steps](http://smallcultfollowing.com/babysteps/)
 * [Mara's Blog](https://blog.m-ou.se/)
 * [llogiq](https://llogiq.github.io/)
