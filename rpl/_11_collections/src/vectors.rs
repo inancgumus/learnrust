@@ -1,6 +1,6 @@
 // ⭐️ A vector is stored on the heap memory.
 
-pub fn run_vectors() {
+pub fn run() {
     //
     // let's create a vector of 32-bit ints:
     //                    ______/

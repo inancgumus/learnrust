@@ -32,6 +32,7 @@ In each program, you'll find extensive explanations about everything.
 12. Collection Types
     1.  [Vectors](rpl/_11_collections/src/vectors.rs)
     2.  [Strings](rpl/_11_collections/src/strings.rs)
+    3.  [HashMaps](rpl/_11_collections/src/hashmaps.rs)
 
 ## My Notes
 

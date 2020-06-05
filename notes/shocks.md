@@ -52,3 +52,7 @@ Weird Rust stuff documented.
    ```rust
    let str3 = str1 + &str2;
    ```
+
+6. **People can add their own hashers to stdlib's HashMap implementation**
+
+   Check out them [here](https://crates.io/search?q=hasher).

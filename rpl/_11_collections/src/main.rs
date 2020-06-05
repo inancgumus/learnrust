@@ -1,18 +1,24 @@
-// https://doc.rust-lang.org/stable/std/collections/index.html
+// https://doc.rust-lang.org/std/collections/index.html
 
-// `vectors.rs` file will act like `vectors` module here.
-// rust searches for vectors.rs in the current directory.
-mod vectors;
+mod vectors; // make vectors.rs act like the vectors module.
 
-mod strings;
+mod strings; // make strings.rs act like the strings module.
+
+mod hashmaps; // make hashmaps.rs act like the hashmaps module.
 
 fn main() {
-    println!("VECTORS");
-    println!("-------------------------------------------");
-    vectors::run_vectors();
-
+    println!("*******************************************************************");
+    println!("★ VECTORS ★");
+    println!("*******************************************************************");
+    vectors::run();
     println!("\n");
-    println!("STRINGS");
-    println!("-------------------------------------------");
-    strings::run_strings();
+    println!("*******************************************************************");
+    println!("★ STRINGS ★");
+    println!("*******************************************************************");
+    strings::run();
+    println!("\n");
+    println!("*******************************************************************");
+    println!("★ HASH MAPS ★");
+    println!("*******************************************************************");
+    hashmaps::run();
 }
