@@ -10,7 +10,7 @@
 
 * I remember wondering about what are traits from the beginning.
 
-## The most useful chapter was these ones:
+## The most useful chapters were these ones:
 * Programming a Guessing Game
 * Understanding Ownership
 
@@ -24,7 +24,7 @@
 
 * `rustup` installation OK.
 * Don't talk about `rustc`, just tell me `cargo [new|run]`.
-* Unnecessarily talking about `Cargo.toml`. Tell me you're going to explain me later. And you do in the Guessing game chapter.
+* Unnecessarily talking about `Cargo.toml`. Tell me you're going to explain me later on in the Guessing game chapter.
 
 ## Chapter 2: Programming a Guessing Game
 
