@@ -55,3 +55,5 @@
 * [Rust Disassembly](https://giordi91.github.io/post/disassemlbyrust1/)
 * [Porting Godot Games to Rust](https://paytonrules.com/post/games-in-rust-with-godot-part-one/)
 * [Why Rust?](http://rust-class.org/0/pages/using-rust-for-an-undergraduate-os-course.html)
+* [How to read Rust docs?](http://blog.frqc.info/post/how-to-read-rust-docs/)
+* [What's Rust's turbofish?](https://techblog.tonsser.com/posts/what-is-rusts-turbofish)
