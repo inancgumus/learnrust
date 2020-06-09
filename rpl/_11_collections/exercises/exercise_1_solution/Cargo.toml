@@ -1,0 +1,7 @@
+[package]
+name = "exercise_1_solution"
+version = "0.1.0"
+authors = ["Inanc Gumus <m@inanc.io>"]
+edition = "2018"
+
+[dependencies]

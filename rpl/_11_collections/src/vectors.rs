@@ -3,8 +3,8 @@
 pub fn run() {
     //
     // let's create a vector of 32-bit ints:
-    //                    ______/
-    //                   /
+    //                __________/
+    //               /
     let mut v: Vec<i32> = Vec::new();
     //
     // let's create the same vector w/type-inferring:
