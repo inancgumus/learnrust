@@ -35,6 +35,7 @@ This will be a long journey. So I suggest you watching this repository for updat
     1.  [Vectors](rpl/_11_collections/src/vectors.rs)
     2.  [Strings](rpl/_11_collections/src/strings.rs)
     3.  [HashMaps](rpl/_11_collections/src/hashmaps.rs)
+    4.  [🏋️‍♂️ Exercises 🏋️‍♀️](rpl/_11_collections/exercises)
 
 ## My Notes
 
