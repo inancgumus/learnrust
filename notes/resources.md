@@ -28,6 +28,7 @@
 * [Official Learning Resources](https://www.rust-lang.org/learn)
 * [Official Rust Book](https://doc.rust-lang.org/book)
 * [Read Rust](https://readrust.net/)
+* [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
 * [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
 * [Rust Style Guidelines](https://doc.rust-lang.org/1.0.0/style/README.html)
 * [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)

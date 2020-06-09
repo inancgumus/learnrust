@@ -2,7 +2,7 @@ fn main() {
     // Given a list of integers: 1..10
 
     // 1 -> use a vector
-    let mut ints = [10, 8, 7, 3, 4, 7, 7, 2];
+    let mut ints = vec![10, 8, 7, 3, 4, 7, 7, 2];
 
     // 2 -> return mean (the average value)
     println!("mean: {}", mean(&ints));
@@ -14,17 +14,37 @@ fn main() {
     println!("median: {}", median(&ints));
 
     // 4 -> return mode (the value that occurs most often)
-    // println!("mode: {}", mode(&ints));
+    println!("mode: {:?}", mode(&ints));
 }
 
+// accept a slice &[i32] instead of a vector Vec<i32>
+// this way mean() can accept a vector as well as a slice, etc.
 fn mean(nums: &[i32]) -> f32 {
+    // You can use `as T` to convert values.
+    // For example: `as f32` means convert the value to f32.
+    let len = nums.len() as f32;
+
+    let mut sum = 0.0;
+    for n in nums {
+        sum += *n as f32;
+    }
+    sum / len
+
+    // ALTERNATIVE SOLUTION:
+    // Rust is a functional language.
+    // You can use Lazy iterators to sum values, and more.
+    /*
     nums
-        .iter()              // returns an iterator from the nums slice
-        .sum::<i32>() as f32 // -> sum the numbers by iterating
-                             // -> ::<i32> is the turbo-fish syntax.
-                             //    tells `sum()` that it's going to sum
-                             //    i32 values.
-        / nums.len() as f32
+        // returns an iterator from the nums slice.
+        .iter()
+        // -> sum all the numbers.
+        // -> ::<i32> is the turbo-fish syntax.
+        //    tells `sum()` that it's going to sum
+        //    i32 values.
+        .sum::<i32>() as f32
+        /
+        nums.len() as f32
+    */
 }
 
 fn median(nums: &[i32]) -> f32 {
@@ -42,7 +62,38 @@ fn median(nums: &[i32]) -> f32 {
     }
 }
 
-// TODO: Implement...
-// fn mode(nums: &[i32]) -> Vec<f32> {
-//     vec![0.0, 0.1]
-// }
+use std::collections::HashMap;
+
+fn mode(nums: &[i32]) -> i32 {
+    // multi-variable assignment? nope.
+    // see this: https://github.com/rust-lang/rfcs/issues/372
+    let mut mo = 0;
+    let mut max = 0;
+
+    // although we can do something similar below using an iterator,
+    // it'd be out of scope for now. because you didn't learn it yet.
+    // so we're going to use a simple for loop.
+
+    // collect frequencies in a hash map.
+    let mut freqs = HashMap::with_capacity(nums.len());
+    for n in nums {
+        // n contains a reference to the next number in the nums slice.
+        // asterisk allows us to change the value from the same memory position.
+        *freqs.entry(n).or_insert(0) += 1;
+
+        // get the value from key `n`.
+        // note: you can use unwrap() here because we already know that a value
+        //       with the key `n` exist from the code line above.
+        let count = *freqs.get(n).unwrap();
+
+        // find the number with the highest frequency, so far.
+        if count > max {
+            max = count;
+            mo = *n;
+        }
+    }
+    mo
+
+    // study this for an alternative implementations (optional):
+    // https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/statistics.html
+}
