@@ -2,7 +2,9 @@
 
 I'm learning Rust, and here are my notes.
 
-In each program, you'll find extensive explanations about everything.
+In each program, you'll find extensive explanations.
+
+This will be a long journey. So I suggest you watching this repository for updates.
 
 ## Official Rust Book Studies Index
 
@@ -42,4 +44,5 @@ In each program, you'll find extensive explanations about everything.
 * [Rust Glossary](notes/glossary.md)
 * [Useless Knowledge](notes/useless.md)
 * [Comparison of Rust to Other Langs](notes/langs.png)
+* [FAQ](notes/faq.md)
 * [Awesome Rust Resources](notes/resources.md)
