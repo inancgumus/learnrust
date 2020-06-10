@@ -70,10 +70,9 @@ fn main() {
     say(10, 20);
 
     // {...} is an expression.
-    // here it returns a tuple: (2, 5)
     let (x, y) = {
         let x = 1;
-        (x + 1, 5)
+        (x + 1, 5) // <- here it returns a tuple: (2, 5)
     };
     say(x, y);
     say(one().0, one().1);
