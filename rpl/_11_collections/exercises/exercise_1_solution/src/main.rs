@@ -18,17 +18,21 @@ fn main() {
 }
 
 // accept a slice &[i32] instead of a vector Vec<i32>
-// this way mean() can accept a vector as well as a slice, etc.
+// this way sum() can accept a vector as well as a slice, etc.
+fn sum(nums: &[i32]) -> i32 {
+    let mut t = 0;
+    for n in nums {
+        t += *n;
+    }
+    t
+}
+
 fn mean(nums: &[i32]) -> f32 {
     // You can use `as T` to convert values.
     // For example: `as f32` means convert the value to f32.
     let len = nums.len() as f32;
-
-    let mut sum = 0.0;
-    for n in nums {
-        sum += *n as f32;
-    }
-    sum / len
+    let s = sum(nums) as f32;
+    s / len
 
     // ALTERNATIVE SOLUTION:
     // Rust is a functional language.
