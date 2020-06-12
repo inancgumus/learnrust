@@ -1,5 +1,7 @@
 # Exercises
 
+👉 [Click to see the solutions](.).
+
 ## Exercise 1
 
 You have given a list of integers.
