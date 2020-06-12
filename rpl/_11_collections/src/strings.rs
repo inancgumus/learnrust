@@ -1,4 +1,12 @@
 // ===================================================================
+// 🤯 OMG
+// I had a hard time learning through all of these String types.
+// When I try to do the collection exercises, I couldn't know what to do.
+// So I tried to reread the documentation, and also a lot of posts, etc.
+// I think I finally came to understand the necessary knowledge to go on.
+// ===================================================================
+
+// ===================================================================
 // ☝️ Rust wants you to put more thought when working with Strings.
 //    So that you'll be saved from string/character bugs later on.
 // ===================================================================
@@ -22,6 +30,7 @@
 //      -> A fix-sized UTF-8 encoded string slice that refers to a
 //         hardcoded location in memory.
 //      -> Underlying type: &'static str
+//      -> `'static` means the value is hardcoded into the binary.
 //
 // ⭐️ &str
 //
@@ -52,7 +61,17 @@
 //
 //      -> Dynamic string type: Growable, and shrinkable.
 //      -> Owned, mutable, UTF-8 encoded, and heap-allocated.
-//      -> You can pass it as &String to a function that accepts &str.
+//
+//      -> Its source code looks like this:
+//
+//         pub struct String {
+//             vec: Vec<u8>,
+//         }
+//
+//      => You can pass it as &String to a function that accepts &str.
+//         WHY?
+//         https://doc.rust-lang.org/std/string/struct.String.html#deref
+//
 //
 //             let s = String::from("hey");
 //
@@ -61,15 +80,17 @@
 //             }
 //
 //             p(&s);
+//               ^
+//               |
+//      ________/
+//      \ Above, Rust automatically does this:
+//             &*s
+//             ^^
+//             ||
+//             |+--> Dereferences to str
+//             +--> Borrows it
 //
-//          WHY?
-//          https://doc.rust-lang.org/std/string/struct.String.html#deref
-//
-//      -> Its source code looks like this:
-//
-//         pub struct String {
-//             vec: Vec<u8>,
-//         }
+//             So it becomes a &str that points to the contents of s.
 //
 // ⭐️ Other String Types
 //
@@ -239,3 +260,5 @@ pub fn run() {
 // https://doc.rust-lang.org/book/ch08-02-strings.html
 // https://doc.rust-lang.org/std/primitive.str.html
 // https://doc.rust-lang.org/std/string/struct.String.html
+// https://doc.rust-lang.org/src/alloc/string.rs.html
+// https://doc.rust-lang.org/src/core/str/mod.rs.html
