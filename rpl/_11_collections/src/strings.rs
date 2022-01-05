@@ -1,37 +1,103 @@
-// https://doc.rust-lang.org/book/ch08-02-strings.html
-
-// Rust wants you to put more thought when working with Strings.
-// So that you'll be saved from string/character bugs later on.
-
-//
-// String Terminology used in Rust:
-//
-// String literals
-// -> Stored in the program’s binary,
-// -> and are therefore string slices.
-// -> UTF-8 encoded.
-//
-// str (_usually seen as `&str`_)
-// -> This is the only string type in the core language.
-// -> It's a string slice.
-// -> UTF-8 encoded.
-//
-// String
-// -> Provided by Rust’s stdlib
-// -> Growable, mutable, owned, and UTF-8 encoded.
-// -> A wrapper over a `Vec<u8>` (_a slice of bytes_).
-//
-// Other String Types
-// -> OsString, OsStr, CString, and Cstr.
-// -> Other crates can create their own string types
-//    to encode data, or represent data in memory
-//    in different ways.
-//
+// ===================================================================
+// 🤯 OMG
+// I had a hard time learning through all of these String types.
+// When I try to do the collection exercises, I couldn't know what to do.
+// So I tried to reread the documentation, and also a lot of posts, etc.
+// I think I finally came to understand the necessary knowledge to go on.
+// ===================================================================
 
 // ===================================================================
-// ☝️ When Rustaceans refer to “strings” in Rust,
+// ☝️ Rust wants you to put more thought when working with Strings.
+//    So that you'll be saved from string/character bugs later on.
+// ===================================================================
+
+// ===================================================================
+// ☝️ When Rustaceans refer to "strings" in Rust,
 //    they usually mean the String and the string slice &str types,
 //    not just one of those types.
+// ===================================================================
+
+// ===================================================================
+// String Terminology used in Rust:
+//
+// ❤️ TLDR:
+//
+//      -> Use `String`: If you need an owned and mutable string data.
+//      -> use `&str`  : If you need a borrowed, and read-only string data.
+//
+// ⭐️ "a string literal like this one"
+//
+//      -> A fix-sized UTF-8 encoded string slice that refers to a
+//         hardcoded location in memory.
+//      -> Underlying type: &'static str
+//      -> `'static` means the value is hardcoded into the binary.
+//
+// ⭐️ &str
+//
+//      -> Preferred way to pass strings around.
+//      -> Called a string slice.
+//      -> It gets copied (not cloned).
+//
+//      -> UTF-8 encoded: It's a reference to a UTF-8 byte array.
+//
+//      => Two-words fat pointer:
+//      -> A pointer to a `str`.
+//      -> The str's length.
+//      -> See: https://doc.rust-lang.org/std/primitive.str.html#representation
+//
+//      => Size is only known at runtime.
+//
+//        -> Following won't work because the size is unknown at compile-time.
+//           Rust needs to know the size of every variable.
+//
+//           let impossible: str = "nope";
+//
+//        -> This will work because &str is a reference to a location
+//           in memory. So its address can be known at runtime.
+//
+//           let possible: &str = "yep";
+//
+// ⭐️ String
+//
+//      -> Dynamic string type: Growable, and shrinkable.
+//      -> Owned, mutable, UTF-8 encoded, and heap-allocated.
+//
+//      -> Its source code looks like this:
+//
+//         pub struct String {
+//             vec: Vec<u8>,
+//         }
+//
+//      => You can pass it as &String to a function that accepts &str.
+//         WHY?
+//         https://doc.rust-lang.org/std/string/struct.String.html#deref
+//
+//
+//             let s = String::from("hey");
+//
+//             fn p(s: &str) {
+//                 println!("{}", s);
+//             }
+//
+//             p(&s);
+//               ^
+//               |
+//      ________/
+//      \ Above, Rust automatically does this:
+//             &*s
+//             ^^
+//             ||
+//             |+--> Dereferences to str
+//             +--> Borrows it
+//
+//             So it becomes a &str that points to the contents of s.
+//
+// ⭐️ Other String Types
+//
+//      -> OsString, OsStr, CString, and Cstr.
+//      -> Other crates can create their own string types
+//         to encode data, or represent data in memory
+//         in different ways.
 // ===================================================================
 
 #[allow(unused)] // see: https://kutt.it/Qh9Jfb
@@ -189,3 +255,10 @@ pub fn run() {
     // and this     : https://en.wikipedia.org/wiki/Character_(computing)
     //
 }
+
+// REFERENCES:
+// https://doc.rust-lang.org/book/ch08-02-strings.html
+// https://doc.rust-lang.org/std/primitive.str.html
+// https://doc.rust-lang.org/std/string/struct.String.html
+// https://doc.rust-lang.org/src/alloc/string.rs.html
+// https://doc.rust-lang.org/src/core/str/mod.rs.html

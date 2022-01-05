@@ -107,7 +107,7 @@ fn main() {
     //
     // 1. Simple values like an integer doesn't need to be cloned.
     // 2. They can be copied by Rust automatically.
-    // 3. It has a Copy treat.
+    // 3. It has a Copy trait.
     //    SEE: https://doc.rust-lang.org/std/marker/trait.Copy.html
     //
 }
